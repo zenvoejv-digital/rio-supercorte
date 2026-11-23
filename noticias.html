@@ -24,19 +24,20 @@
 <div style="width: 100%; background: #0D0E10; color: #F2F2F0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
 
 <!-- NAV -->
-<header style="border-bottom: 1px solid #23262C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
+<header class="site-header" style="border-bottom: 1px solid #23262C">
+<div class="header-inner" style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
 <a href="/" aria-label="Rio Supercorte, página inicial" style="display: flex; align-items: center; text-decoration: none">
 <img src="/assets/img/logo-rio-supercorte.svg" alt="Rio Supercorte Ferro e Aço" style="height: 56px; width: auto; display: block">
 </a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 15px; font-weight: 500">
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="menu" class="nav-main" aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 15px; font-weight: 500">
 <a href="/" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Início</a>
 <a href="/#produtos" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Produtos</a>
 <a href="/#servicos" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Serviços</a>
 <a href="/noticias" aria-current="page" style="color: #FCC10C; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #FCC10C">Notícias</a>
 <a href="/trabalhe-conosco" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Trabalhe conosco</a>
 </nav>
-<a href="/#orcamento" style="background: #FCC10C; color: #121316; text-decoration: none; font-weight: 700; padding: 14px 24px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em">Pedir orçamento</a>
+<a class="nav-cta" href="/#orcamento" style="background: #FCC10C; color: #121316; text-decoration: none; font-weight: 700; padding: 14px 24px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em">Pedir orçamento</a>
 </div>
 </header>
 
@@ -54,7 +55,7 @@
 
 <!-- PANORAMA -->
 <section style="border-bottom: 1px solid #23262C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+<div class="stats-grid" style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
 <div style="padding: 32px 24px 32px 0; border-right: 1px solid #23262C; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #9BA0A8">Importação de laminados · 2026</span>
 <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 800; color: #FCC10C; line-height: 1">−15,1%</span>
@@ -78,7 +79,7 @@
 <div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; gap: 24px">
 
 <!-- Destaque -->
-<article style="background: #FCC10C; color: #121316; padding: 48px; display: flex; flex-wrap: wrap; gap: 24px 56px; align-items: end">
+<article class="news-featured" style="background: #FCC10C; color: #121316; padding: 48px; display: flex; flex-wrap: wrap; gap: 24px 56px; align-items: end">
 <div style="flex: 999 1 560px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; gap: 10px 18px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em"><span style="border: 1.5px solid #121316; padding: 4px 10px">Mercado</span><span style="padding: 5px 0">11/11/2026 · BB Investimentos</span></div>
 <h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; font-size: clamp(36px, 4.2vw, 60px); line-height: 0.95">Estoques de aço caem em outubro, mas preços seguem fracos no Brasil</h2>
@@ -88,7 +89,7 @@
 </article>
 
 <!-- Grade -->
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+<div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
 
 <article style="background: #16181C; border: 1px solid #2A2D33; padding: 32px; display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; flex-wrap: wrap; gap: 8px 14px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9BA0A8"><span style="color: #FCC10C">Siderúrgicas</span><span>Nov/2026 · InvestNews</span></div>
@@ -149,7 +150,7 @@
 </div>
 
 <!-- CTA -->
-<div style="margin-top: 32px; border: 1px solid #2A2D33; padding: 40px; display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; justify-content: space-between">
+<div class="news-cta" style="margin-top: 32px; border: 1px solid #2A2D33; padding: 40px; display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; justify-content: space-between">
 <div style="flex: 1 1 480px">
 <h2 style="margin: 0 0 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; line-height: 1">Preço mudou? A gente te ajuda a decidir.</h2>
 <p style="margin: 0; color: #B4B8BF">Fale com nosso time de vendas para saber disponibilidade e prazo do material que você precisa.</p>

@@ -146,6 +146,26 @@
     }
   }
 
+  /* ---------- Menu sanduíche (celular) ---------- */
+  var toggle = document.querySelector('.menu-toggle');
+  var header = document.querySelector('.site-header');
+  if (toggle && header) {
+    function fechar() {
+      header.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menu');
+    }
+    toggle.addEventListener('click', function () {
+      var aberto = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+      toggle.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
+    header.querySelectorAll('.nav-main a, .nav-cta').forEach(function (a) {
+      a.addEventListener('click', fechar);
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+  }
+
   /* ---------- Ano automático no rodapé ---------- */
   document.querySelectorAll('[data-ano]').forEach(function (el) {
     el.textContent = new Date().getFullYear();

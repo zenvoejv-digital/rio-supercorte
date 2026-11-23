@@ -24,19 +24,20 @@
 <div style="width: 100%; background: #0D0E10; color: #F2F2F0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
 
 <!-- NAV -->
-<header style="border-bottom: 1px solid #23262C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
+<header class="site-header" style="border-bottom: 1px solid #23262C">
+<div class="header-inner" style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
 <a href="/" aria-label="Rio Supercorte, página inicial" style="display: flex; align-items: center; text-decoration: none">
 <img src="/assets/img/logo-rio-supercorte.svg" alt="Rio Supercorte Ferro e Aço" style="height: 56px; width: auto; display: block">
 </a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 15px; font-weight: 500">
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="menu" class="nav-main" aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 15px; font-weight: 500">
 <a href="/" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Início</a>
 <a href="/#produtos" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Produtos</a>
 <a href="/#servicos" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Serviços</a>
 <a href="/noticias" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Notícias</a>
 <a href="/trabalhe-conosco" aria-current="page" style="color: #FCC10C; text-decoration: none; padding: 10px 0; border-bottom: 2px solid #FCC10C">Trabalhe conosco</a>
 </nav>
-<a href="/#orcamento" style="background: #FCC10C; color: #121316; text-decoration: none; font-weight: 700; padding: 14px 24px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em">Pedir orçamento</a>
+<a class="nav-cta" href="/#orcamento" style="background: #FCC10C; color: #121316; text-decoration: none; font-weight: 700; padding: 14px 24px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em">Pedir orçamento</a>
 </div>
 </header>
 

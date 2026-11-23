@@ -24,24 +24,25 @@
 <div style="width: 100%; background: #0D0E10; color: #F2F2F0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
 
 <!-- TOP BAR -->
-<div style="background: #FCC10C; color: #121316; font-size: 14px; font-weight: 600">
+<div class="topbar" style="background: #FCC10C; color: #121316; font-size: 14px; font-weight: 600">
 <div style="max-width: 1280px; margin: 0 auto; padding: 10px 32px; display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; align-items: center">
-<span>Distribuição, corte e dobra de ferro e aço · Rio de Janeiro – RJ</span>
+<span class="topbar-tag">Distribuição, corte e dobra de ferro e aço · Rio de Janeiro – RJ</span>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 24px">
 <a href="tel:+552121117700" style="color: #121316; text-decoration: none">(21) 2111-7700</a>
 <a href="https://wa.me/5521996841513" style="color: #121316; text-decoration: none">WhatsApp (21) 99684-1513</a>
-<a href="mailto:vendas@riosupercorte.com.br?subject=Contato%20pelo%20site%20%E2%80%93%20Rio%20Supercorte&amp;body=Ol%C3%A1%2C%20equipe%20Rio%20Supercorte%21%0A%0AGostaria%20de%20um%20or%C3%A7amento%20para%3A%0A%0AMaterial%20/%20servi%C3%A7o%3A%0AMedidas%20e%20quantidade%3A%0A%0ANome%3A%0AEmpresa%3A%0ATelefone%20/%20WhatsApp%3A%0A" title="Abrir seu e-mail com a mensagem pronta para vendas@riosupercorte.com.br" style="color: #121316; text-decoration: none">vendas@riosupercorte.com.br</a>
+<a class="topbar-mail" href="mailto:vendas@riosupercorte.com.br?subject=Contato%20pelo%20site%20%E2%80%93%20Rio%20Supercorte&amp;body=Ol%C3%A1%2C%20equipe%20Rio%20Supercorte%21%0A%0AGostaria%20de%20um%20or%C3%A7amento%20para%3A%0A%0AMaterial%20/%20servi%C3%A7o%3A%0AMedidas%20e%20quantidade%3A%0A%0ANome%3A%0AEmpresa%3A%0ATelefone%20/%20WhatsApp%3A%0A" title="Abrir seu e-mail com a mensagem pronta para vendas@riosupercorte.com.br" style="color: #121316; text-decoration: none">vendas@riosupercorte.com.br</a>
 </div>
 </div>
 </div>
 
 <!-- NAV -->
-<header style="border-bottom: 1px solid #23262C; background: #0D0E10">
-<div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
+<header class="site-header" style="border-bottom: 1px solid #23262C; background: #0D0E10">
+<div class="header-inner" style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; justify-content: space-between">
 <a href="#inicio" aria-label="Rio Supercorte, página inicial" style="display: flex; align-items: center; text-decoration: none">
 <img src="/assets/img/logo-rio-supercorte.svg" alt="Rio Supercorte Ferro e Aço" style="height: 56px; width: auto; display: block">
 </a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 15px; font-weight: 500">
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+<nav id="menu" class="nav-main" aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 6px 28px; font-size: 15px; font-weight: 500">
 <a href="#empresa" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Empresa</a>
 <a href="#produtos" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Produtos</a>
 <a href="#servicos" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Serviços</a>
@@ -49,14 +50,14 @@
 <a href="/noticias" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Notícias</a>
 <a href="/trabalhe-conosco" style="color: #C9CCD1; text-decoration: none; padding: 10px 0">Trabalhe conosco</a>
 </nav>
-<a href="#orcamento" style="background: #FCC10C; color: #121316; text-decoration: none; font-weight: 700; padding: 14px 24px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em">Pedir orçamento</a>
+<a class="nav-cta" href="#orcamento" style="background: #FCC10C; color: #121316; text-decoration: none; font-weight: 700; padding: 14px 24px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em">Pedir orçamento</a>
 </div>
 </header>
 
 <!-- HERO -->
 <section id="inicio" style="position: relative; overflow: hidden; border-bottom: 1px solid #23262C">
 <div class="hero-bg">
-<div style="max-width: 1280px; margin: 0 auto; padding: 88px 32px 72px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div class="hero-inner" style="max-width: 1280px; margin: 0 auto; padding: 88px 32px 72px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <span style="display: inline-flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #FCC10C"><span style="width: 40px; height: 2px; background: #FCC10C"></span>Ferro e aço · Rio de Janeiro</span>
 <h1 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; font-size: clamp(56px, 7.4vw, 108px); line-height: 0.9; letter-spacing: -0.01em">Aço cortado<br>na medida.<br><span style="color: #FCC10C">Entregue no prazo.</span></h1>
@@ -71,7 +72,7 @@ Orçamento no WhatsApp</a>
 </div>
 
 <!-- Hero visual: chapa com trajetória de corte -->
-<div style="flex: 1 1 460px; min-width: 0; position: relative; background: rgba(22, 24, 28, 0.88); border: 1px solid #2A2D33; padding: 28px">
+<div class="hero-card" style="flex: 1 1 460px; min-width: 0; position: relative; background: rgba(22, 24, 28, 0.88); border: 1px solid #2A2D33; padding: 28px">
 <div style="display: flex; justify-content: space-between; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #8C9199; margin-bottom: 16px"><span>Peça sob desenho</span><span style="color: #FCC10C">● Oxicorte</span></div>
 <svg viewBox="0 0 480 360" style="width: 100%; height: auto; display: block" role="img" aria-label="Animação: o maçarico de oxicorte percorre o desenho e recorta um flange sob medida em uma chapa de aço">
 <defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="#2A2D33" stroke-width="2"></line></pattern></defs>
@@ -106,7 +107,7 @@ Orçamento no WhatsApp</a>
 <line x1="358" y1="332" x2="358" y2="348" stroke="#8C9199" stroke-width="1.5"></line>
 </g>
 </svg>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #2A2D33; margin-top: 20px; border: 1px solid #2A2D33">
+<div class="spec-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #2A2D33; margin-top: 20px; border: 1px solid #2A2D33">
 <div style="background: #16181C; padding: 14px 16px"><div style="font-size: 12px; color: #8C9199; text-transform: uppercase; letter-spacing: 0.1em">Material</div><div style="font-weight: 600">Aço carbono</div></div>
 <div style="background: #16181C; padding: 14px 16px"><div style="font-size: 12px; color: #8C9199; text-transform: uppercase; letter-spacing: 0.1em">Processo</div><div style="font-weight: 600">Oxicorte</div></div>
 <div style="background: #16181C; padding: 14px 16px"><div style="font-size: 12px; color: #8C9199; text-transform: uppercase; letter-spacing: 0.1em">Certificado</div><div style="font-weight: 600">Da usina</div></div>
@@ -117,7 +118,7 @@ Orçamento no WhatsApp</a>
 
 <!-- Prova -->
 <div style="border-top: 1px solid #23262C">
-<div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
+<div class="stats-grid" style="max-width: 1280px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))">
 <div style="padding: 28px 24px 28px 0; border-right: 1px solid #23262C"><div style="font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: #FCC10C; line-height: 1">100%</div><div style="color: #B4B8BF; font-size: 15px">Empresa nacional</div></div>
 <div style="padding: 28px 24px; border-right: 1px solid #23262C"><div style="font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: #FCC10C; line-height: 1">8</div><div style="color: #B4B8BF; font-size: 15px">Processos de corte e beneficiamento</div></div>
 <div style="padding: 28px 24px; border-right: 1px solid #23262C"><div style="font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: #FCC10C; line-height: 1">10</div><div style="color: #B4B8BF; font-size: 15px">Setores da indústria atendidos</div></div>
@@ -128,7 +129,7 @@ Orçamento no WhatsApp</a>
 
 <!-- MATERIAIS STRIP -->
 <div style="background: #FCC10C; color: #121316; overflow: hidden">
-<div style="max-width: 1280px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; gap: 10px 36px; justify-content: space-between; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 30px; text-transform: uppercase; letter-spacing: 0.02em">
+<div class="materials" style="max-width: 1280px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; gap: 10px 36px; justify-content: space-between; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 30px; text-transform: uppercase; letter-spacing: 0.02em">
 <span>Aço carbono</span><span aria-hidden="true">/</span><span>Aço inox</span><span aria-hidden="true">/</span><span>Alumínio</span><span aria-hidden="true">/</span><span>Latão</span><span aria-hidden="true">/</span><span>Planos e não planos</span>
 </div>
 </div>
@@ -208,7 +209,7 @@ Orçamento no WhatsApp</a>
 <a href="#orcamento" style="color: #121316; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 15px; border-bottom: 2px solid #121316; text-decoration: none; padding: 10px 0">Consultar disponibilidade →</a>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px">
+<div class="prod-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px">
 <a href="#orcamento" class="prod" style="background: #FFFFFF; border: 1px solid #DDDBD4; padding: 28px; display: flex; flex-direction: column; gap: 28px; text-decoration: none; color: #121316">
 <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#121316" stroke-width="3" aria-hidden="true"><rect x="8" y="30" width="56" height="12"></rect><circle cx="36" cy="36" r="6" fill="#FCC10C" stroke="none"></circle></svg>
 <div><h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; text-transform: uppercase">Barras</h3><p style="margin: 4px 0 0; color: #565B63; font-size: 15px">Redondas, quadradas e chatas</p></div>
@@ -267,7 +268,7 @@ Orçamento no WhatsApp</a>
 <!-- SETORES -->
 <section id="setores" style="padding: 0 0 112px">
 <div style="max-width: 1280px; margin: 0 auto; padding: 0 32px">
-<div style="border: 1px solid #2A2D33; padding: 48px; display: flex; flex-direction: column; gap: 32px">
+<div class="setores-box" style="border: 1px solid #2A2D33; padding: 48px; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-wrap: wrap; gap: 16px 48px; justify-content: space-between; align-items: end">
 <h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; font-size: clamp(36px, 4vw, 56px); line-height: 0.95">Setores que<br><span style="color: #FCC10C">movemos</span></h2>
 <p style="margin: 0; color: #B4B8BF; max-width: 420px">Fornecemos para a indústria pesada e para a construção, da peça única ao lote recorrente.</p>

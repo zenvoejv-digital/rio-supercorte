@@ -75,3 +75,105 @@ html{scroll-behavior:smooth}
 @keyframes cutGlow{0%,100%{opacity:.25}50%{opacity:.8}}
 @keyframes cutSpark{0%{opacity:1;transform:scale(.4)}100%{opacity:0;transform:scale(1.5)}}
 @media (prefers-reduced-motion:reduce){.cut-lift,.cut-piece,.cut-line,.cut-hole,.cut-torch,.cut-glow,.cut-sparks line,.cut-dim{animation:none}.cut-piece,.cut-hole{opacity:1}.cut-line{stroke-dashoffset:0}.cut-torch{display:none}}
+
+/* =========================================================
+   CELULAR (até 640px) — ajustes só para telas pequenas
+   ========================================================= */
+.menu-toggle{display:none}
+
+@media (max-width: 640px){
+  /* Respiro lateral e vertical mais compacto */
+  [style*="max-width: 1280px"]{padding-left:20px !important;padding-right:20px !important}
+  section[style*="padding: 112px 0"],section[style*="padding: 104px 0"]{padding-top:64px !important;padding-bottom:64px !important}
+  section[style*="padding: 0 0 112px"]{padding-bottom:64px !important}
+  section[style*="padding: 80px 0 112px"],section[style*="padding: 72px 0 112px"]{padding-top:40px !important;padding-bottom:64px !important}
+  h2[style*="clamp(44px"]{font-size:40px !important}
+
+  /* Faixa amarela de contatos: só telefone e WhatsApp, numa linha */
+  .topbar{font-size:13px !important}
+  .topbar>div{justify-content:center !important;padding-top:8px !important;padding-bottom:8px !important}
+  .topbar-tag,.topbar-mail{display:none !important}
+
+  /* Cabeçalho fixo com menu sanduíche */
+  .site-header{position:sticky;top:0;z-index:50;background:#0D0E10}
+  .header-inner{padding-top:12px !important;padding-bottom:12px !important;gap:0 !important}
+  .header-inner img{height:44px !important}
+  .menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;padding:12px;background:transparent;border:1.5px solid #3A3E45;cursor:pointer}
+  .menu-toggle span{display:block;height:2px;background:#F2F2F0;transition:transform .25s ease,opacity .2s ease}
+  .menu-open .menu-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-toggle span:nth-child(2){opacity:0}
+  .menu-open .menu-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-main,.nav-cta{display:none !important}
+  .menu-open .nav-main{display:flex !important;flex-direction:column !important;flex-basis:100%;gap:0 !important;margin-top:12px;border-top:1px solid #23262C}
+  .menu-open .nav-main a{font-size:18px !important;padding:14px 0 !important;border-bottom:1px solid #23262C !important}
+  .menu-open .nav-cta{display:block !important;flex-basis:100%;text-align:center;margin-top:16px}
+
+  /* Topo (hero) */
+  .hero-inner{padding-top:40px !important;padding-bottom:48px !important;gap:36px !important}
+  .hero-inner h1{font-size:52px !important}
+  .hero-inner p{font-size:17px !important}
+  .hero-inner a[href^="https://wa.me"],.hero-inner a[href="#servicos"]{flex:1 1 100%;justify-content:center}
+  .hero-card{padding:18px !important}
+  .hero-card>div:first-child{font-size:12px !important;letter-spacing:.08em !important}
+  .spec-grid>div{padding:10px !important}
+  .spec-grid>div>div:first-child{font-size:10px !important;letter-spacing:.04em !important}
+  .spec-grid>div>div:last-child{font-size:13px !important}
+
+  /* Números (2 por linha, alinhados) */
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:0 16px !important}
+  .stats-grid>div{padding:20px 0 !important;border-right:0 !important;border-bottom:1px solid #23262C}
+  .stats-grid>div>div:first-child,.stats-grid>div>span:nth-child(2){font-size:34px !important}
+  .stats-grid>div>div:last-child,.stats-grid>div>span{font-size:13px !important}
+  .stats-grid>div>span:first-child{font-size:10px !important}
+
+  /* Faixa de materiais */
+  .materials{font-size:19px !important;gap:6px 14px !important;justify-content:flex-start !important;padding-top:16px !important;padding-bottom:16px !important}
+  .materials [aria-hidden="true"]{display:none}
+  .materials span:not([aria-hidden]){border:1.5px solid #121316;padding:4px 10px}
+
+  /* Serviços: cards mais baixos */
+  .svc{min-height:220px !important;padding:24px !important}
+  .svc h3{font-size:30px !important}
+  .svc:hover,.svc:active,.svc:focus-within{transform:none}
+
+  /* Produtos: 2 por linha */
+  .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+  .prod{padding:18px !important;gap:16px !important}
+  .prod svg{width:44px;height:44px}
+  .prod h3{font-size:19px !important;overflow-wrap:anywhere}
+  .prod p{font-size:13px !important;line-height:1.4}
+  .prod-dark>span:first-child{font-size:48px !important}
+  .prod::after{top:14px;right:14px;font-size:13px}
+  .prod:hover,.prod:active,.prod:focus-visible{transform:translateY(-4px)}
+
+  /* Setores */
+  .setores-box{padding:28px 20px !important;gap:24px !important}
+  .setores-box span[style*="padding: 12px 20px"]{padding:9px 14px !important;font-size:14px !important}
+
+  /* Formulários em 1 coluna */
+  #form-orcamento,#form-curriculo{grid-template-columns:minmax(0,1fr) !important;padding:24px 20px !important;gap:16px !important}
+  #form-orcamento input,#form-orcamento select,#form-orcamento textarea,#form-curriculo input:not([type="checkbox"]):not([type="file"]),#form-curriculo select,#form-curriculo textarea{width:100%;min-width:0}
+  #cv-form-wrap,#cv-sucesso{min-width:0}
+  #cv-form-wrap h2{font-size:30px !important}
+  #form-orcamento>*,#form-curriculo>*{grid-column:1 / -1 !important}
+  #btn-whatsapp,#btn-email{padding:16px !important}
+
+  /* Notícias */
+  .news-grid{grid-template-columns:1fr !important;gap:16px !important}
+  .news-grid article{padding:24px !important}
+  .news-grid h3{font-size:26px !important}
+  .news-featured{padding:24px !important}
+  .news-featured h2{font-size:34px !important}
+  .news-featured>a{flex-basis:100% !important}
+  .news-cta{padding:24px !important}
+  .news-cta h2{font-size:30px !important}
+
+  /* Rodapé */
+  footer>div:first-child{gap:28px !important;padding-top:48px !important}
+}
+
+/* Telas bem estreitas (até 360px) */
+@media (max-width: 360px){
+  .hero-inner h1{font-size:44px !important}
+  .prod-grid{grid-template-columns:1fr !important}
+}
