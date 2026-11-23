@@ -9,6 +9,10 @@ rio-supercorte/
 ├── index.html               # Home: hero, serviços, produtos, diferenciais, setores, orçamento
 ├── trabalhe-conosco.html    # Formulário de envio de currículo
 ├── noticias.html            # Notícias do mercado de aço e metalurgia
+├── 404.html                 # Página de erro (endereço não encontrado)
+├── vercel.json              # Configuração da Vercel (URLs limpas, cache, segurança)
+├── robots.txt               # Regras para buscadores
+├── sitemap.xml              # Mapa do site para o Google
 ├── assets/
 │   ├── css/
 │   │   └── style.css        # Estilos globais, animações e fundos
@@ -23,20 +27,38 @@ rio-supercorte/
 └── README.md
 ```
 
-## Como ver no computador
+## Endereços das páginas
 
-Basta abrir o `index.html` no navegador. Para testar como num servidor:
+Na Vercel as páginas ficam sem o `.html`:
+
+| Página | Endereço |
+|---|---|
+| Home | `/` |
+| Trabalhe conosco | `/trabalhe-conosco` |
+| Notícias | `/noticias` |
+
+## Publicar na Vercel (grátis)
+
+1. Acesse **vercel.com** e entre com o GitHub.
+2. Clique em **Add New → Project** e importe o repositório **rio-supercorte**.
+3. Em *Framework Preset* escolha **Other**. Deixe *Build Command* e *Output Directory* vazios.
+4. Clique em **Deploy**. O site fica em `https://rio-supercorte.vercel.app` (ou um nome parecido, se este já existir).
+
+Cada `git push` na branch `main` publica a nova versão automaticamente.
+
+**Se o endereço final for outro** (outro nome na Vercel ou domínio próprio), troque `https://rio-supercorte.vercel.app` pelo endereço certo em: `index.html`, `noticias.html`, `trabalhe-conosco.html` (tags `canonical` e `og:`), `robots.txt` e `sitemap.xml`.
+
+**Domínio próprio:** no projeto da Vercel, abra *Settings → Domains*, adicione o domínio (ex.: `riosupercorte.com.br`) e siga as instruções de DNS.
+
+## Testar no computador
+
+Como os links usam endereços sem `.html`, teste com um servidor local que entenda isso:
 
 ```bash
-python3 -m http.server 8000
-# abra http://localhost:8000
+npx serve .
+# ou, com a CLI da Vercel:
+npx vercel dev
 ```
-
-## Como publicar
-
-Qualquer hospedagem de site estático funciona: **GitHub Pages**, Netlify, Vercel, Hostinger, UOL Host etc.
-
-**GitHub Pages:** no repositório, vá em *Settings → Pages*, escolha a branch `main` e a pasta `/ (root)`, e salve. O site fica no ar em alguns minutos.
 
 ## Formulários
 
