@@ -17,7 +17,8 @@ rio-supercorte/
 │   ├── css/
 │   │   └── style.css        # Estilos globais, animações e fundos
 │   ├── js/
-│   │   └── main.js          # Formulários (orçamento e currículo) e ano no rodapé
+│   │   ├── main.js          # Formulários (orçamento e currículo), menu do celular e ano no rodapé
+│   │   └── assistente.js    # Assistente de vendas (chat automático)
 │   └── img/
 │       ├── logo-rio-supercorte.svg
 │       ├── hero-galpao.jpg       # Fundo do topo e da seção de orçamento
@@ -70,6 +71,16 @@ npx vercel dev
   ```
 
 Os contatos ficam no topo de `assets/js/main.js` (`WHATSAPP`, `EMAIL_VENDAS`, `EMAIL_RH`).
+
+## Assistente de vendas
+
+Chat flutuante ("Fale com a gente") em todas as páginas, **sem IA e sem custo**:
+
+- Responde sobre produtos, materiais, tipos de corte, serviços, prazo, certificados, endereço, setores e vagas.
+- **Orçamento guiado:** pergunta material, serviço, medidas, nome e local de entrega, mostra um resumo e envia o pedido pronto para o **WhatsApp** (ou por e-mail).
+- Se não entender a pergunta, oferece enviá-la direto a um vendedor pelo WhatsApp.
+
+Para mudar respostas ou palavras-chave, edite a lista `TOPICOS` em `assets/js/assistente.js`. Para mudar as perguntas do orçamento, edite `PASSOS`.
 
 ## Pendências antes de publicar
 
