@@ -54,3 +54,24 @@ html{scroll-behavior:smooth}
 /* Trabalhe conosco — escolha do canal de contato */
 .contato-opcao{min-height:48px;padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;background:transparent;color:#F2F2F0;border:1.5px solid #3A3E45;transition:background-color .2s,color .2s,border-color .2s}
 .contato-opcao[aria-pressed="true"]{background:#FCC10C;color:#121316;border-color:#FCC10C}
+
+/* Hero — animação do oxicorte recortando a peça sob desenho */
+.cut-lift{transform-box:view-box;animation:cutLift 9s ease-in-out infinite}
+.cut-piece{opacity:0;animation:cutPiece 9s ease infinite}
+.cut-line{animation:cutLine 9s linear infinite}
+.cut-hole{transform-box:fill-box;transform-origin:center;opacity:0;animation:cutHole 9s cubic-bezier(.3,1.5,.5,1) infinite}
+.cut-torch{transform-box:view-box;transform-origin:240px 170px;animation:cutTorch 9s linear infinite}
+.cut-glow{animation:cutGlow .5s ease-in-out infinite}
+.cut-sparks line{transform-box:view-box;transform-origin:358px 170px;animation:cutSpark .32s ease-out infinite}
+.cut-sparks line:nth-child(2n){animation-delay:.12s}
+.cut-sparks line:nth-child(3n){animation-delay:.2s}
+.cut-dim{transform-box:fill-box;transform-origin:center;animation:cutDim 9s ease infinite}
+@keyframes cutLine{0%{stroke-dashoffset:100;opacity:1}50%{stroke-dashoffset:0;opacity:1}90%{stroke-dashoffset:0;opacity:1}97%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes cutTorch{0%{transform:rotate(0deg);opacity:1}50%{transform:rotate(360deg);opacity:1}54%,100%{transform:rotate(360deg);opacity:0}}
+@keyframes cutPiece{0%,50%{opacity:0}56%,90%{opacity:1}97%,100%{opacity:0}}
+@keyframes cutHole{0%,56%{opacity:0;transform:scale(.2)}63%,90%{opacity:1;transform:scale(1)}97%,100%{opacity:0;transform:scale(1)}}
+@keyframes cutLift{0%,62%{transform:translate(0,0);filter:none}70%,90%{transform:translate(-6px,-8px);filter:drop-shadow(8px 12px 0 rgba(0,0,0,.55))}100%{transform:translate(0,0);filter:none}}
+@keyframes cutDim{0%,68%{opacity:0;transform:scaleX(0)}76%,90%{opacity:1;transform:scaleX(1)}97%,100%{opacity:0;transform:scaleX(1)}}
+@keyframes cutGlow{0%,100%{opacity:.25}50%{opacity:.8}}
+@keyframes cutSpark{0%{opacity:1;transform:scale(.4)}100%{opacity:0;transform:scale(1.5)}}
+@media (prefers-reduced-motion:reduce){.cut-lift,.cut-piece,.cut-line,.cut-hole,.cut-torch,.cut-glow,.cut-sparks line,.cut-dim{animation:none}.cut-piece,.cut-hole{opacity:1}.cut-line{stroke-dashoffset:0}.cut-torch{display:none}}
