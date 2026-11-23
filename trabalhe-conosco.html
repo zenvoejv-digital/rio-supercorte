@@ -53,18 +53,20 @@
 <div style="flex: 999 1 620px; min-width: 0; background: #16181C; border: 1px solid #2A2D33">
 
 <div id="cv-form-wrap">
-<form id="form-curriculo" action="https://formspree.io/f/xkjrppry" method="POST" enctype="multipart/form-data" data-endpoint="https://formspree.io/f/xkjrppry" style="padding: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px">
+<form id="form-curriculo" action="https://formspree.io/f/xkjrppry" method="POST" enctype="multipart/form-data" style="padding: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px">
 <h2 style="grid-column: 1 / -1; margin: 0 0 6px; font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase">Envie seu currículo</h2>
 <input type="hidden" name="_subject" value="Novo currículo pelo site – Rio Supercorte">
 
 <label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">Nome completo *
-<input type="text" name="nome" required="required" autocomplete="name" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0"></label>
+<input type="text" name="nome" required="required" data-fs-field autocomplete="name" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0"></label>
 
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">E-mail *
-<input type="email" name="email" required="required" autocomplete="email" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0"></label>
+<input type="email" name="email" required="required" autocomplete="email" data-fs-field style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0">
+<span data-fs-error="email" class="fs-campo-erro">Confira o e-mail informado.</span></label>
 
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">WhatsApp *
-<input type="tel" name="whatsapp" required="required" placeholder="(21) 9XXXX-XXXX" autocomplete="tel" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0"></label>
+<input type="tel" name="whatsapp" required="required" placeholder="(21) 9XXXX-XXXX" autocomplete="tel" data-fs-field style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0">
+<span data-fs-error="whatsapp" class="fs-campo-erro">Confira o número de WhatsApp.</span></label>
 
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">Área de interesse *
 <select name="area" required="required" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; text-transform: none; letter-spacing: 0">
@@ -99,17 +101,20 @@
 <span><span id="cv-nome-arquivo" style="display: block; font-weight: 600">Nenhum arquivo selecionado</span><span style="display: block; font-size: 14px; color: #9BA0A8">Clique para escolher o arquivo</span></span>
 </span>
 <span style="border: 1.5px solid #3A3E45; padding: 10px 18px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">Anexar</span>
-<input id="cv" type="file" name="curriculo" required="required" accept=".pdf,.doc,.docx" style="position: absolute; width: 1px; height: 1px; opacity: 0"></label>
+<input id="cv" type="file" name="curriculo" required="required" accept=".pdf,.doc,.docx" data-fs-field style="position: absolute; width: 1px; height: 1px; opacity: 0"></label>
+<span data-fs-error="curriculo" class="fs-campo-erro">Não foi possível receber este arquivo. Envie um PDF ou Word de até 5 MB.</span>
 </div>
 
 <label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em">Conte um pouco da sua experiência
-<textarea name="mensagem" rows="4" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; resize: vertical; text-transform: none; letter-spacing: 0"></textarea></label>
+<textarea name="mensagem" data-fs-field rows="4" style="background: #0D0E10; border: 1px solid #3A3E45; color: #F2F2F0; padding: 14px; font-size: 16px; resize: vertical; text-transform: none; letter-spacing: 0"></textarea></label>
 
 <label style="grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: #B4B8BF">
 <input type="checkbox" name="lgpd" required="required" style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #FCC10C; flex-shrink: 0">
 <span>Autorizo a Rio Supercorte a guardar meus dados e meu currículo para processos seletivos e a me contatar pelo canal escolhido, conforme a <a href="#privacidade">Política de Privacidade</a>.</span></label>
 
-<button type="submit" style="grid-column: 1 / -1; background: #FCC10C; color: #121316; border: 0; padding: 20px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer">Enviar currículo</button>
+<div data-fs-error="" id="cv-erro" role="alert" class="fs-form-erro" style="grid-column: 1 / -1"></div>
+
+<button type="submit" data-fs-submit-btn style="grid-column: 1 / -1; background: #FCC10C; color: #121316; border: 0; padding: 20px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer">Enviar currículo</button>
 </form>
 </div>
 
@@ -153,5 +158,6 @@
 
 </div>
 <script src="assets/js/main.js" defer></script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
