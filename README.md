@@ -41,7 +41,7 @@ Qualquer hospedagem de site estático funciona: **GitHub Pages**, Netlify, Verce
 ## Formulários
 
 - **Orçamento (home):** monta a mensagem com nome, telefone, empresa, material, medidas e serviço, e abre o **WhatsApp** (21) 99684-1513 ou o **e-mail** de quem clicou, endereçado a vendas@riosupercorte.com.br. Não precisa de servidor.
-- **Currículo (trabalhe-conosco):** sem configuração, abre o e-mail do candidato já preenchido para o RH (o candidato anexa o currículo). Para receber o **arquivo anexado direto pelo site**, crie um formulário gratuito no [Formspree](https://formspree.io) (ou similar) e coloque o endereço no atributo `data-endpoint` do formulário:
+- **Currículo (trabalhe-conosco):** envia direto para o Formspree (`https://formspree.io/f/xkjrppry`), com o currículo anexado. As respostas chegam no e-mail cadastrado na conta Formspree. Se o `data-endpoint` for removido, o formulário volta a abrir o e-mail do candidato para o RH.
 
   ```html
   <form id="form-curriculo" data-endpoint="https://formspree.io/f/SEU_ID" ...>

@@ -96,9 +96,13 @@
 
       if (endpoint) {
         // Envio real com anexo (ex.: Formspree, Getform, Netlify Forms) — ver README
+        var botao = cv.querySelector('button[type="submit"]');
+        var textoBotao = botao ? botao.textContent : '';
+        if (botao) { botao.disabled = true; botao.textContent = 'Enviando...'; }
         fetch(endpoint, { method: 'POST', body: new FormData(cv), headers: { Accept: 'application/json' } })
           .then(function (r) { if (!r.ok) throw new Error(r.status); mostrarSucesso(canal); })
-          .catch(function () { alert('Não foi possível enviar agora. Tente novamente ou envie para ' + EMAIL_RH + '.'); });
+          .catch(function () { alert('Não foi possível enviar agora. Tente novamente ou envie para ' + EMAIL_RH + '.'); })
+          .then(function () { if (botao) { botao.disabled = false; botao.textContent = textoBotao; } });
         return;
       }
 
