@@ -7,6 +7,7 @@
   var WHATSAPP = '5521996841513';
   var TELEFONE = '(21) 2111-7700';
   var EMAIL = 'vendas@riosupercorte.com.br';
+  var MAPA = 'https://www.google.com/maps/place/Estr.+Jo%C3%A3o+Paulo,+130+-+Hon%C3%B3rio+Gurgel,+Rio+de+Janeiro+-+RJ,+21512-002/@-22.8470774,-43.3614542,17z/data=!3m1!4b1!4m5!3m4!1s0x99630d716552cf:0x96d2a82ef9ae81f3!8m2!3d-22.8470774!4d-43.3592655';
   var ENDERECO = 'Estr. João Paulo, 130 – Honório Gurgel, Rio de Janeiro – RJ';
 
   function wa(texto) {
@@ -100,7 +101,7 @@
     {
       id: 'endereco',
       chaves: ['endereco', 'onde', 'localizacao', 'fica', 'retirar', 'retirada', 'mapa', 'buscar'],
-      resposta: 'Estamos em <b>' + ENDERECO + '</b>.<br><a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(ENDERECO) + '" target="_blank" rel="noopener">Abrir no mapa →</a>',
+      resposta: 'Estamos em <b>' + ENDERECO + '</b>.<br><a href="' + MAPA + '" target="_blank" rel="noopener">Abrir no mapa →</a>',
       opcoes: ['Horário de atendimento', 'Falar com vendedor']
     },
     {
