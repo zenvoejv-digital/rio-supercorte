@@ -41,11 +41,7 @@ Qualquer hospedagem de site estático funciona: **GitHub Pages**, Netlify, Verce
 ## Formulários
 
 - **Orçamento (home):** monta a mensagem com nome, telefone, empresa, material, medidas e serviço, e abre o **WhatsApp** (21) 99684-1513 ou o **e-mail** de quem clicou, endereçado a vendas@riosupercorte.com.br. Não precisa de servidor.
-- **Currículo (trabalhe-conosco):** envia direto para o Formspree (`https://formspree.io/f/xkjrppry`), com o currículo anexado. As respostas chegam no e-mail cadastrado na conta Formspree. Se o `data-endpoint` for removido, o formulário volta a abrir o e-mail do candidato para o RH.
-
-  ```html
-  <form id="form-curriculo" data-endpoint="https://formspree.io/f/SEU_ID" ...>
-  ```
+- **Currículo (trabalhe-conosco):** envia para o Formspree (`https://formspree.io/f/xkjrppry`) pela biblioteca [`@formspree/ajax`](https://github.com/formspree/formspree-js/tree/master/packages/formspree-ajax), carregada por CDN, com o currículo anexado. As respostas chegam no e-mail cadastrado na conta Formspree. Os erros aparecem no próprio formulário, em português (elementos `data-fs-error`). Sem JavaScript, o formulário faz um POST normal para o mesmo endereço (atributo `action`). O ID do formulário fica em `FORMSPREE_ID`, no `main.js`.
 
 Os contatos ficam no topo de `assets/js/main.js` (`WHATSAPP`, `EMAIL_VENDAS`, `EMAIL_RH`).
 

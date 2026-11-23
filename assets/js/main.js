@@ -6,6 +6,7 @@
   var WHATSAPP = '5521996841513';
   var EMAIL_VENDAS = 'vendas@riosupercorte.com.br';
   var EMAIL_RH = 'rh@riosupercorte.com.br'; // TODO: confirmar o e-mail real de RH
+  var FORMSPREE_ID = 'xkjrppry'; // formulário de currículos (https://formspree.io/f/xkjrppry)
 
   function val(form, name) {
     var el = form.elements[name];
@@ -87,44 +88,33 @@
       });
     }
 
-    cv.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!cv.reportValidity()) return;
+    // Envio via Formspree (@formspree/ajax, carregado por CDN em trabalhe-conosco.html).
+    // A biblioteca envia o formulário como FormData, incluindo o arquivo do currículo.
+    // Sem JavaScript, o form faz POST direto para o mesmo endpoint (atributo action).
+    var erroGeral = document.getElementById('cv-erro');
+    if (erroGeral) {
+      erroGeral.textContent = 'Não foi possível enviar agora. Tente novamente ou envie o currículo para ' + EMAIL_RH + '.';
+    }
 
-      var canal = contatoInput.value === 'email' ? 'e-mail' : 'WhatsApp';
-      var endpoint = cv.getAttribute('data-endpoint');
-
-      if (endpoint) {
-        // Envio real com anexo (ex.: Formspree, Getform, Netlify Forms) — ver README
+    window.formspree = window.formspree || function () { (window.formspree.q = window.formspree.q || []).push(arguments); };
+    window.formspree('initForm', {
+      formElement: cv,
+      formId: FORMSPREE_ID,
+      useDefaultStyles: false, // estilos próprios em style.css
+      onSubmit: function () {
         var botao = cv.querySelector('button[type="submit"]');
-        var textoBotao = botao ? botao.textContent : '';
-        if (botao) { botao.disabled = true; botao.textContent = 'Enviando...'; }
-        fetch(endpoint, { method: 'POST', body: new FormData(cv), headers: { Accept: 'application/json' } })
-          .then(function (r) { if (!r.ok) throw new Error(r.status); mostrarSucesso(canal); })
-          .catch(function () { alert('Não foi possível enviar agora. Tente novamente ou envie para ' + EMAIL_RH + '.'); })
-          .then(function () { if (botao) { botao.disabled = false; botao.textContent = textoBotao; } });
-        return;
+        if (botao) botao.textContent = 'Enviando...'; // a biblioteca restaura o texto ao terminar
+      },
+      onSuccess: function () {
+        mostrarSucesso(contatoInput.value === 'email' ? 'e-mail' : 'WhatsApp');
+      },
+      onError: function (ctx, erro) {
+        // Erros devolvidos pelo Formspree (ex.: campo inválido, anexo recusado pelo plano)
+        if (window.console) console.warn('[Formspree]', erro.getFormErrors(), erro.getAllFieldErrors());
+      },
+      onFailure: function (ctx, erro) {
+        if (window.console) console.warn('[Formspree] falha de rede', erro);
       }
-
-      // Sem serviço de formulário configurado: abre o e-mail do candidato já preenchido
-      var corpo = [
-        'Candidatura – Rio Supercorte',
-        '',
-        'Nome: ' + val(cv, 'nome'),
-        'E-mail: ' + val(cv, 'email'),
-        'WhatsApp: ' + val(cv, 'whatsapp'),
-        'Área de interesse: ' + val(cv, 'area'),
-        'Bairro/cidade: ' + (val(cv, 'cidade') || '-'),
-        'Prefere ser chamado por: ' + canal,
-        '',
-        'Experiência: ' + (val(cv, 'mensagem') || '-'),
-        '',
-        '(Anexe seu currículo a este e-mail antes de enviar.)'
-      ].join('\n');
-      window.location.href = 'mailto:' + EMAIL_RH +
-        '?subject=' + encodeURIComponent('Currículo – ' + val(cv, 'area') + ' – ' + val(cv, 'nome')) +
-        '&body=' + encodeURIComponent(corpo);
-      mostrarSucesso(canal);
     });
 
     function mostrarSucesso(canal) {

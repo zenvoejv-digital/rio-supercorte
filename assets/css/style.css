@@ -54,3 +54,10 @@ html{scroll-behavior:smooth}
 /* Trabalhe conosco — escolha do canal de contato */
 .contato-opcao{min-height:48px;padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;background:transparent;color:#F2F2F0;border:1.5px solid #3A3E45;transition:background-color .2s,color .2s,border-color .2s}
 .contato-opcao[aria-pressed="true"]{background:#FCC10C;color:#121316;border-color:#FCC10C}
+
+/* Formspree (@formspree/ajax): mensagens de erro do formulário de currículo */
+[data-fs-error],[data-fs-success]{display:none}
+.fs-campo-erro[data-fs-active]{display:block;color:#FF8A80;font-size:14px;font-weight:600;text-transform:none;letter-spacing:0}
+.fs-form-erro[data-fs-active]{display:block;padding:14px 16px;background:#2A1414;border:1px solid #FF8A80;color:#FFD2CC;font-size:15px}
+[data-fs-field][aria-invalid="true"]{border-color:#FF8A80 !important}
+#form-curriculo button[type="submit"]:disabled{opacity:.7;cursor:wait}
