@@ -1,0 +1,56 @@
+/* Rio Supercorte — estilos globais */
+body{margin:0;background:#0D0E10}
+a{color:#FCC10C}a:hover{color:#FFD54A}
+*{box-sizing:border-box}
+input,textarea,select{font:inherit}
+.hero-bg{background-color:#0D0E10;background-image:radial-gradient(ellipse at center,rgba(13,14,16,.38) 0%,rgba(13,14,16,.58) 100%),url(../img/hero-galpao.jpg);background-size:cover;background-position:center center;background-repeat:no-repeat}
+.hero-bg h1,.hero-bg p{text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.prod{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,background-color .35s ease,color .35s ease;-webkit-tap-highlight-color:transparent}
+.prod::before{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:#FCC10C;transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+.prod::after{content:"Orçar →";position:absolute;top:24px;right:24px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:#FCC10C;opacity:0;transform:translateX(-10px);transition:opacity .35s ease,transform .35s ease}
+.prod svg{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.prod svg *{transition:stroke .35s ease}
+.prod h3{transition:transform .35s ease}
+.prod p{transition:color .35s ease}
+.prod:hover,.prod:active,.prod:focus-visible{transform:translateY(-8px);box-shadow:0 22px 44px rgba(18,19,22,.28);background-color:#121316 !important;color:#F2F2F0 !important;border-color:#121316 !important}
+.prod:hover p,.prod:active p,.prod:focus-visible p{color:#B4B8BF !important}
+.prod:hover svg,.prod:active svg,.prod:focus-visible svg{transform:scale(1.15) rotate(-6deg)}
+.prod:hover svg *,.prod:active svg *,.prod:focus-visible svg *{stroke:#FCC10C}
+.prod:hover h3,.prod:active h3,.prod:focus-visible h3{transform:translateX(4px)}
+.prod:hover::before,.prod:active::before,.prod:focus-visible::before{transform:scaleX(1)}
+.prod:hover::after,.prod:active::after,.prod:focus-visible::after{opacity:1;transform:translateX(0)}
+.prod-dark:hover,.prod-dark:active,.prod-dark:focus-visible{background-color:#FCC10C !important;color:#121316 !important}
+.prod-dark:hover p,.prod-dark:active p,.prod-dark:focus-visible p{color:#121316 !important}
+.prod-dark:hover span,.prod-dark:active span,.prod-dark:focus-visible span{color:#121316 !important}
+.prod:hover svg [fill="#FFFFFF"],.prod:active svg [fill="#FFFFFF"],.prod:focus-visible svg [fill="#FFFFFF"]{fill:#121316}
+.prod-dark::before{background:#121316}
+.prod-dark::after{color:#121316}
+@media (prefers-reduced-motion:reduce){.prod,.prod svg,.prod h3,.prod::before,.prod::after{transition:none}}
+.produtos-bg{background-color:#F4F3EF;background-image:linear-gradient(rgba(244,243,239,.4),rgba(244,243,239,.4)),url(../img/produtos-estoque.jpg);background-size:cover;background-position:center;background-repeat:no-repeat}
+.svc{position:relative;overflow:hidden;isolation:isolate;cursor:pointer;transition:transform .35s ease,box-shadow .35s ease;-webkit-tap-highlight-color:transparent}
+.svc>*{position:relative;z-index:2}
+.svc .svc-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);filter:grayscale(.4) brightness(.9);transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+.svc::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,19,22,.8) 0%,rgba(18,19,22,.7) 45%,rgba(18,19,22,.95) 100%);transition:opacity .45s ease}
+.svc-hot::after{background:linear-gradient(180deg,rgba(252,193,12,.55) 0%,rgba(252,193,12,.4) 40%,rgba(252,193,12,.9) 100%)}
+.svc-hot .svc-bg{filter:none}
+.svc-hot:hover::after,.svc-hot:active::after,.svc-hot:focus-within::after{opacity:.85}
+.svc::before{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;z-index:3;background:#FCC10C;transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+.svc-hot::before{background:#121316}
+.svc h3{transition:transform .35s ease,letter-spacing .35s ease}
+.svc:hover,.svc:active,.svc:focus-within{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.45);z-index:4}
+.svc:hover .svc-bg,.svc:active .svc-bg,.svc:focus-within .svc-bg{transform:scale(1.14);filter:grayscale(0) brightness(1)}
+.svc:hover::after,.svc:active::after,.svc:focus-within::after{opacity:.78}
+.svc:hover::before,.svc:active::before,.svc:focus-within::before{transform:scaleX(1)}
+.svc:hover h3,.svc:active h3,.svc:focus-within h3{transform:translateY(-4px);letter-spacing:.02em}
+@media (prefers-reduced-motion:reduce){.svc,.svc .svc-bg,.svc::after,.svc::before,.svc h3{transition:none}}
+.orcamento-bg{background-color:#FCC10C;background-image:linear-gradient(90deg,rgba(252,193,12,.84) 0%,rgba(252,193,12,.7) 45%,rgba(252,193,12,.52) 100%),url(../img/hero-galpao.jpg);background-size:cover;background-position:center center;background-repeat:no-repeat}
+input,textarea,select,button{font:inherit}
+
+/* Utilitários */
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Trabalhe conosco — escolha do canal de contato */
+.contato-opcao{min-height:48px;padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer;background:transparent;color:#F2F2F0;border:1.5px solid #3A3E45;transition:background-color .2s,color .2s,border-color .2s}
+.contato-opcao[aria-pressed="true"]{background:#FCC10C;color:#121316;border-color:#FCC10C}
