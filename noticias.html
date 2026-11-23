@@ -171,5 +171,23 @@
 </div>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/assistente.js" defer></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+/* Integração com o assistente do site: o balão do Tawk fica escondido e o
+   chat ao vivo abre pelo assistente ("Falar com vendedor" → "Chat ao vivo") */
+Tawk_API.onLoad=function(){ if(!window.__rsTawkAberto){ Tawk_API.hideWidget(); } };
+Tawk_API.onChatMinimized=function(){ window.__rsTawkAberto=false; Tawk_API.hideWidget(); };
+Tawk_API.onChatMessageAgent=function(){ window.__rsTawkAberto=true; Tawk_API.showWidget(); };
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6b04b8de52d49d3cf6856fdf/1k85749ft';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>

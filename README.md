@@ -79,6 +79,7 @@ Chat flutuante ("Fale com a gente") em todas as páginas, **sem IA e sem custo**
 - Responde sobre produtos, materiais, tipos de corte, serviços, prazo, certificados, endereço, setores e vagas.
 - **Orçamento guiado:** pergunta material, serviço, medidas, nome e local de entrega, mostra um resumo e envia o pedido pronto para o **WhatsApp** (ou por e-mail).
 - Se não entender a pergunta, oferece enviá-la direto a um vendedor pelo WhatsApp.
+- **Chat ao vivo (Tawk.to):** o script do Tawk está em todas as páginas, mas o balão dele fica escondido para não duplicar com o assistente. Quando o cliente toca em **"Chat ao vivo"** (ou pede um atendente), o assistente fecha e abre o chat do Tawk. Se um atendente mandar mensagem primeiro, o chat do Tawk aparece sozinho. Responda pelo painel ou app do Tawk.to.
 
 Para mudar respostas ou palavras-chave, edite a lista `TOPICOS` em `assets/js/assistente.js`. Para mudar as perguntas do orçamento, edite `PASSOS`.
 

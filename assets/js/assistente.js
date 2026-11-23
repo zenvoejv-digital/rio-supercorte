@@ -112,8 +112,8 @@
     {
       id: 'contato',
       chaves: ['contato', 'telefone', 'ligar', 'whatsapp', 'zap', 'email', 'vendedor', 'atendente', 'humano', 'pessoa'],
-      resposta: 'Fale direto com nosso time de vendas:<br>WhatsApp: <a href="' + wa('Olá! Vim pelo site e gostaria de falar com um vendedor.') + '" target="_blank" rel="noopener">(21) 99684-1513</a><br>Telefone: <a href="tel:+552121117700">' + TELEFONE + '</a><br>E-mail: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>',
-      opcoes: ['Fazer orçamento']
+      resposta: 'Fale direto com nosso time de vendas. Toque em <b>Chat ao vivo</b> para conversar agora com um atendente aqui no site, ou use:<br>WhatsApp: <a href="' + wa('Olá! Vim pelo site e gostaria de falar com um vendedor.') + '" target="_blank" rel="noopener">(21) 99684-1513</a><br>Telefone: <a href="tel:+552121117700">' + TELEFONE + '</a><br>E-mail: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>',
+      opcoes: ['Chat ao vivo', 'Fazer orçamento']
     },
     {
       id: 'setores',
@@ -241,7 +241,7 @@
     if (!iniciado) {
       iniciado = true;
       bot('Olá! 👋 Sou o assistente de vendas da Rio Supercorte. Posso tirar dúvidas sobre produtos e serviços ou montar seu pedido de orçamento para enviar ao nosso time no WhatsApp.',
-        ['Fazer orçamento', 'Produtos', 'Serviços', 'Prazo de entrega', 'Endereço', 'Falar com vendedor']);
+        ['Fazer orçamento', 'Produtos', 'Serviços', 'Prazo de entrega', 'Endereço', 'Chat ao vivo']);
     }
     setTimeout(function () { input.focus(); }, 50);
   }
@@ -268,6 +268,21 @@
     input.value = '';
     receber(t);
   });
+
+  /* ---------- Chat ao vivo (Tawk.to) ---------- */
+  function tawkPronto() {
+    return window.Tawk_API && typeof window.Tawk_API.maximize === 'function';
+  }
+  function abrirChatAoVivo() {
+    if (tawkPronto()) {
+      window.__rsTawkAberto = true;
+      fechar();
+      window.Tawk_API.showWidget();
+      window.Tawk_API.maximize();
+      return true;
+    }
+    return false;
+  }
 
   /* ---------- Orçamento guiado ---------- */
   var PASSOS = [
@@ -331,6 +346,11 @@
 
     var n = norm(texto);
     if (n === 'fazer orcamento' || n === 'novo orcamento') { iniciarOrcamento(); return; }
+    if (n === 'chat ao vivo' || n.indexOf('atendente') !== -1 || n.indexOf('humano') !== -1) {
+      if (abrirChatAoVivo()) return;
+      bot('O chat ao vivo não carregou agora. Fale com a gente pelo WhatsApp:<a class="rs-cta" href="' + wa('Olá! Vim pelo site e gostaria de falar com um atendente.') + '" target="_blank" rel="noopener">Abrir WhatsApp</a>', ['Fazer orçamento']);
+      return;
+    }
     if (n === 'enviar desenho no whatsapp') {
       bot('Perfeito! Abra o WhatsApp e envie o desenho, a foto ou o PDF da peça:<a class="rs-cta" href="' + wa('Olá! Vim pelo site e quero enviar o desenho de uma peça para orçamento.') + '" target="_blank" rel="noopener">Abrir WhatsApp</a>', ['Fazer orçamento']);
       return;
@@ -343,6 +363,6 @@
     // Não entendeu: oferece mandar a pergunta para um vendedor
     bot('Essa eu prefiro passar para o nosso time de vendas, para te responder certinho.' +
       '<a class="rs-cta" href="' + wa('Olá! Vim pelo site e tenho uma dúvida: ' + texto) + '" target="_blank" rel="noopener">Enviar minha pergunta no WhatsApp</a>',
-      ['Fazer orçamento', 'Produtos', 'Serviços']);
+      ['Chat ao vivo', 'Fazer orçamento', 'Produtos']);
   }
 })();
